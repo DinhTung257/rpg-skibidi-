@@ -222,23 +222,6 @@ function monter_function () {
     monters_health.setLabel("HP", 2)
     monters_health.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
 }
-statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 40, function (status) {
-    if (true) {
-        animation.runImageAnimation(
-        Monters,
-        assets.animation`zombie skibidi`,
-        200,
-        false
-        )
-        pause(500)
-        if (true) {
-            health_bar.value += -25
-            if (Math.percentChance(0.1)) {
-                health_bar.value += -40
-            }
-        }
-    }
-})
 statusbars.onStatusReached(StatusBarKind.EnemyHealth, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 10, function (status) {
     if (true) {
         animation.runImageAnimation(
