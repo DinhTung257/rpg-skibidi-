@@ -69,9 +69,9 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         )
         pause(500)
         if (true) {
-            health_bar.value += -30
+            health_bar.value += -25
             if (Math.percentChance(0.1)) {
-                health_bar.value += -50
+                health_bar.value += -40
             }
         }
     } else if (Math.percentChance(60)) {
@@ -100,14 +100,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     pause(50)
     attack2 = sprites.createProjectileFromSprite(assets.image`protect`, Main, 300, 0)
     if (true) {
-        monters_health.value += -5
+        monters_health.value += -10
     } else if (Math.percentChance(1)) {
         monters_health.value += -20
     }
     pause(1000)
     if (Math.percentChance(10)) {
         health_bar.value += 0
-    } else if (Math.percentChance(40)) {
+    } else if (Math.percentChance(30)) {
         animation.runImageAnimation(
         Monters,
         assets.animation`zombie skibidi`,
@@ -116,9 +116,9 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         )
         pause(500)
         if (true) {
-            health_bar.value += -30
+            health_bar.value += -25
             if (Math.percentChance(0.1)) {
-                health_bar.value += -50
+                health_bar.value += -40
             }
         }
     } else if (Math.percentChance(60)) {
@@ -146,7 +146,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     )
     pause(500)
     if (true) {
-        monters_health.value += -8
+        monters_health.value += -12
     } else if (Math.percentChance(36)) {
         monters_health.value += -10
     }
@@ -173,26 +173,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         )
         pause(500)
         if (true) {
-            health_bar.value += -30
+            health_bar.value += -25
         } else if (Math.percentChance(0.1)) {
-            health_bar.value += -50
-        }
-    }
-})
-statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 30, function (status) {
-    if (true) {
-        animation.runImageAnimation(
-        Monters,
-        assets.animation`zombie skibidi`,
-        200,
-        false
-        )
-        pause(500)
-        if (true) {
-            health_bar.value += -30
-            if (Math.percentChance(0.1)) {
-                health_bar.value += -50
-            }
+            health_bar.value += -40
         }
     }
 })
@@ -239,6 +222,23 @@ function monter_function () {
     monters_health.setLabel("HP", 2)
     monters_health.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
 }
+statusbars.onStatusReached(StatusBarKind.Health, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 40, function (status) {
+    if (true) {
+        animation.runImageAnimation(
+        Monters,
+        assets.animation`zombie skibidi`,
+        200,
+        false
+        )
+        pause(500)
+        if (true) {
+            health_bar.value += -25
+            if (Math.percentChance(0.1)) {
+                health_bar.value += -40
+            }
+        }
+    }
+})
 statusbars.onStatusReached(StatusBarKind.EnemyHealth, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 10, function (status) {
     if (true) {
         animation.runImageAnimation(
@@ -249,9 +249,9 @@ statusbars.onStatusReached(StatusBarKind.EnemyHealth, statusbars.StatusCompariso
         )
         pause(500)
         if (true) {
-            health_bar.value += -30
+            health_bar.value += -25
             if (Math.percentChance(0.1)) {
-                health_bar.value += -50
+                health_bar.value += -40
             }
         }
     }
